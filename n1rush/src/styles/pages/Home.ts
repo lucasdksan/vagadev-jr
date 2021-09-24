@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import image from '../../assets/img/principal_banner_mobile.jpg';
+
 import theme from '../colors/themes';
 
 export const Container = styled.main`
@@ -12,17 +13,17 @@ export const Container = styled.main`
     justify-content: flex-start;
     flex-direction: column;
 `;
-export const Banner = styled.div`
+export const Banner = styled.section`
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
     width: 100%;
-    height: 502.86px;
+    height: 520px;
 `;
 export const BannerImg = styled.div`
     width: 100%;
-    height: 436px;
+    height: 460px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -38,7 +39,7 @@ export const BannerInfo = styled.div`
     flex-direction: column;
     padding: 14px 29px;
     width: 100%;
-    height: 214px;
+    height: 210px;
     background-color: rgba(0, 0, 0, 0.65);
 `;
 export const BannerInfoH1 = styled.h1`
@@ -133,7 +134,7 @@ export const ButtonArea = styled.div`
     align-items: center;
     justify-content: space-around;
     height: 18px;
-    width: 30px;
+    width: 50px;
     flex-direction: row;
 `;
 export const ButtonNavigation = styled.button`
@@ -150,3 +151,41 @@ export const IconMenu = styled.img`
     width: 100%;
     height: 100%;
 `; 
+export const MiddleBanner = styled.section`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 19px;
+    width: 100%;
+`;
+export const ShelfArea = styled.section`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 24px 120px 24px;
+    background-color: ${theme.colors.main_white};
+`;
+export const AreaTitle = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    height: 20px;
+    margin-bottom: 31px;
+`;
+export const ShelfTitle = styled.h1`
+    font-family:'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    color: ${theme.colors.main_dark_blue};
+`;
+export const ShelfImg = styled.img`
+    height: 18px;
+    width: 18px;
+    margin-right: 15px;
+`;

@@ -16,12 +16,23 @@ import { Container,
         NumberBlock,
         ButtonArea,
         ButtonNavigation,
-        IconMenu } from '../styles/pages/Home';
+        IconMenu,
+        MiddleBanner,
+        ShelfTitle,
+        ShelfArea,
+        AreaTitle,
+        ShelfImg } from '../styles/pages/Home';
 
 import Header from '../components/Header';
+import MiddleBannerArea from '../components/MiddleBannerArea';
+import ShelfItem from '../components/ShelfItem';
 
 import leftButton from '../assets/svgs/angle-left-solid.svg';
 import rightButton from '../assets/svgs/angle-right-solid.svg';
+import cubeIcon from '../assets/icons/cube.png';
+
+import middleData from '../data/MiddleData';
+import shelfData from '../data/ShelfData';
 
 const Home = ()=>{
     return(
@@ -56,6 +67,31 @@ const Home = ()=>{
                         </SliderNavButtons>
                     </SliderNav>
                 </Banner>
+                <MiddleBanner>
+                    {
+                        middleData.map((itens)=>{
+                            return(
+                                <MiddleBannerArea 
+                                    key={itens.key}
+                                    image={itens.image}
+                                    title={itens.text}
+                                />
+                            );
+                        })
+                    }
+                </MiddleBanner>
+                <ShelfArea>
+                    <AreaTitle>
+                        <ShelfImg src={cubeIcon} alt='Cube Icon'/>
+                        <ShelfTitle>Produtos em destaque</ShelfTitle>
+                    </AreaTitle>
+                    <ShelfItem
+                        image={shelfData[0].image}
+                        title={shelfData[0].text}
+                        key={shelfData[0].key}
+                        value={shelfData[0].value}
+                    />
+                </ShelfArea>
             </Container>
         </>
     );

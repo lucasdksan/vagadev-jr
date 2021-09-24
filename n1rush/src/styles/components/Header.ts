@@ -9,6 +9,7 @@ export const Container = styled.header`
     padding: 16px 13px 10px 18px;
     background-color: transparent;
     position: fixed;
+    z-index: 100;
     top: 0;
     left: 0;
     right: 0;
