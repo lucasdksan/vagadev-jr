@@ -7,7 +7,7 @@ Para este teste, usarei React Js com Typescript, pois é a maneira que me sinto 
 No desenvolvimento do e-commerce, usei o método mobile-first. Esta linha de pensamento se concentra em começar a desenvolver a versão mobile primeiro. 
 
 * #1 - Desenvolver o Header, Banner, Home e themes - horário: 21:00 - [OK].
-* #2 - Middle Banner #1 e #2, Menu, Shelf e Footer - horário: 15:00 - [].
+* #2 - Middle Banner #1 e #2, Menu, Shelf e Footer - horário: 15:00 - [OK].
 * #3 - Click Buy, Context, Responsividade, Dinâmica dos Banner e Passar o pente fino - horário: --:-- - [].
 * #4 - - horário: --:-- - [].
 
