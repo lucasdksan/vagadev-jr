@@ -1,14 +1,20 @@
-import styled from 'styled-components';
-
+import styled, { css } from 'styled-components';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import image from '../../assets/img/principal_banner_mobile.jpg';
-
 import theme from '../colors/themes';
+
+const iconsStyles = css`
+    color: ${theme.colors.main_black};
+    width: 20px;
+    height: 30px;
+`;
 
 export const Container = styled.main`
     display: flex;
     flex: 1;
     width: 100%;
     height: 100%;
+    margin-bottom: 100px;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
@@ -162,30 +168,53 @@ export const MiddleBanner = styled.section`
 export const ShelfArea = styled.section`
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
-    padding: 10px 24px 120px 24px;
-    background-color: ${theme.colors.main_white};
+    width: 100%;
+    height: 590px;
+    padding: 20px;
 `;
-export const AreaTitle = styled.div`
+export const TitleAreaShelf = styled.div`
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: row;
     width: 100%;
     height: 20px;
-    margin-bottom: 31px;
+    margin-bottom: 30px;
 `;
-export const ShelfTitle = styled.h1`
-    font-family:'Roboto';
+export const ShelfTitleIcon = styled.img`
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+`;
+export const TitleShelf = styled.h1`
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 300;
     font-size: 18px;
     line-height: 21px;
     color: ${theme.colors.main_dark_blue};
 `;
-export const ShelfImg = styled.img`
-    height: 18px;
-    width: 18px;
-    margin-right: 15px;
+export const ShelfElementArea = styled.article`
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    flex: 1;
+    width: 100%;
+    height: auto;
 `;
+export const ShelfButton = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0 none;
+    background-color: transparent;
+    outline: 0;
+    width: 20px;
+    height: 30px;
+`;
+
+export const LeftArrow = styled(IoIosArrowBack)`${iconsStyles}`;
+export const RightArrow = styled(IoIosArrowForward)`${iconsStyles}`;

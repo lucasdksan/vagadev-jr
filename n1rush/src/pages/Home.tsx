@@ -18,12 +18,17 @@ import { Container,
         ButtonNavigation,
         IconMenu,
         MiddleBanner,
-        ShelfTitle,
         ShelfArea,
-        AreaTitle,
-        ShelfImg } from '../styles/pages/Home';
+        ShelfTitleIcon,
+        TitleAreaShelf,
+        TitleShelf,
+        ShelfElementArea,
+        ShelfButton,
+        LeftArrow,
+        RightArrow } from '../styles/pages/Home';
 
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import MiddleBannerArea from '../components/MiddleBannerArea';
 import ShelfItem from '../components/ShelfItem';
 
@@ -81,18 +86,23 @@ const Home = ()=>{
                     }
                 </MiddleBanner>
                 <ShelfArea>
-                    <AreaTitle>
-                        <ShelfImg src={cubeIcon} alt='Cube Icon'/>
-                        <ShelfTitle>Produtos em destaque</ShelfTitle>
-                    </AreaTitle>
-                    <ShelfItem
-                        image={shelfData[0].image}
-                        title={shelfData[0].text}
-                        key={shelfData[0].key}
-                        value={shelfData[0].value}
-                    />
+                    <TitleAreaShelf>
+                        <ShelfTitleIcon src={cubeIcon} alt='Icon cubes'/>
+                        <TitleShelf>Produtos em destaque</TitleShelf>
+                    </TitleAreaShelf>
+                    <ShelfElementArea>
+                        <ShelfButton><LeftArrow/></ShelfButton>
+                        <ShelfItem 
+                            key={shelfData[0].key}
+                            title={shelfData[0].text}
+                            value={shelfData[0].value}
+                            image={shelfData[0].image}
+                        />
+                        <ShelfButton><RightArrow/></ShelfButton>
+                    </ShelfElementArea>
                 </ShelfArea>
             </Container>
+            <Footer/>
         </>
     );
 }

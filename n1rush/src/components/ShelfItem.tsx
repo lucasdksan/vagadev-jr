@@ -1,13 +1,13 @@
 import React from 'react';
 
 import { Container,
-        ImageArea,
-        ImgProduct,
-        InfoArea,
-        ButtonText,
+        AreaImg,
+        ImgGame,
+        AreaInfo,
         BuyButton,
-        Title,
-        Value } from '../styles/components/ShelfItem';
+        InfoName,
+        InfoValue,
+        Infos } from '../styles/components/ShelfItem';
 
 interface ShelfProps {
     image: string;
@@ -18,14 +18,16 @@ interface ShelfProps {
 const ShelfItem:React.FC <ShelfProps> = ({ image, title, value })=>{
     return(
         <Container>
-            <ImageArea>
-                <ImgProduct src={image} alt='Image Product'/>
-            </ImageArea>
-            <InfoArea>
-                <Title>{title}</Title>
-                <Value>{value}</Value>
-                <BuyButton><ButtonText>COMPRAR</ButtonText></BuyButton>
-            </InfoArea>
+            <AreaImg>
+                <ImgGame src={image} alt='Game Image'/>
+            </AreaImg>
+            <AreaInfo>
+                <Infos>
+                    <InfoName>{title}</InfoName>
+                    <InfoValue>{value}</InfoValue>
+                </Infos>
+                <BuyButton>COMPRAR</BuyButton>
+            </AreaInfo>
         </Container>
     );
 }

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useWindowScroll } from 'react-use';
 
 import { Container, 
         ButtonMenu, 
@@ -16,8 +17,22 @@ import shoppingIcon from '../assets/svgs/shopping-bag-solid.svg';
 import logoIcon from '../assets/svgs/logo-icon.svg';
 
 const Header = ()=>{
+
+    const { y: pageYOffset } = useWindowScroll();
+    const [ background, setBackground ] = useState('transparent');
+    useEffect(()=>{
+        if(pageYOffset > 160){
+            setBackground('#00000085');
+        }
+        else{
+            setBackground('transparent');
+        }
+    }, [pageYOffset]);
+
     return(
-        <Container>
+        <Container
+            style={{backgroundColor: background}}
+        >
             <ButtonMenu>
                 <IconMenu src={menuIcon} alt='Menu Icon'/>
             </ButtonMenu>

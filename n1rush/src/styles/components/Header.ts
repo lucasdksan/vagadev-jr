@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import theme from '../colors/themes';
 
-export const Container = styled.header`
+export const Container = styled(motion.header)`
     display: flex;
     align-items: center;
     justify-content: space-around;

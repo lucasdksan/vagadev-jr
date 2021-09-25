@@ -7,19 +7,19 @@ const DataInfo = [
         key: 0,
         image: imageOutriders,
         text: 'Outriders',
-        value: '200,00',
+        value: 'R$ 200,00',
     },
     {
         key: 1,
         image: imageCyberpunk,
         text: 'CYBERPUNK 2077',
-        value: '200,00',
+        value: 'R$ 200,00',
     },
     {
         key: 2,
         image: imageDonkeyKong,
         text: 'Donkey Kong Countru Tropical Freeze',
-        value: '200,00',
+        value: 'R$ 200,00',
     }
 ]
 
