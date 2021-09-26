@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { Container,
         Card,
@@ -11,15 +11,19 @@ import { Container,
         TargetInfo,
         ImgMario } from '../styles/components/ClickBuy';
 
+import { ConfirmedContext } from '../contexts/ConfirmedBuy';
+
 import cancelIcon from '../assets/icons/close btn.png';
 import marioIcon from '../assets/icons/mario_big.png';
 
 const ClickBuy = ()=>{
+    const { closeConfirmedBuy } = useContext(ConfirmedContext);
+    
     return(
         <Container>
             <Card>
                 <FirstBlock>
-                    <ButtonCancel><CancelIcon src={cancelIcon} alt='Icon Cancel'/></ButtonCancel>
+                    <ButtonCancel onClick={closeConfirmedBuy}><CancelIcon src={cancelIcon} alt='Icon Cancel'/></ButtonCancel>
                 </FirstBlock>
                 <AreaInfo>
                     <Line/>

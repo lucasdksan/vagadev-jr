@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 
 import { Container,
         AreaImg,
@@ -7,7 +7,13 @@ import { Container,
         BuyButton,
         InfoName,
         InfoValue,
-        Infos } from '../styles/components/ShelfItem';
+        Infos,
+        ImgIconConfirmed } from '../styles/components/ShelfItem';
+
+import { ConfirmedContext } from '../contexts/ConfirmedBuy';
+import theme from '../styles/colors/themes';
+
+import marioImg from '../assets/icons/mario_small.png';
 
 interface ShelfProps {
     image: string;
@@ -16,6 +22,16 @@ interface ShelfProps {
 }
 
 const ShelfItem:React.FC <ShelfProps> = ({ image, title, value })=>{
+    const { ProductUp } = useContext(ConfirmedContext);
+    const [ confirmedBuy, setConfirmedBuy ] = useState(false);
+    const [ buyText, setBuyText ] = useState('COMPRAR');
+    const [ background, setBackground ] = useState(theme.colors.main_blue);
+    function BuyElement(){
+        ProductUp();
+        setConfirmedBuy(true);
+        setBuyText('COMPRADO!');
+        setBackground(theme.colors.main_dark_blue);
+    }
     return(
         <Container>
             <AreaImg>
@@ -26,7 +42,14 @@ const ShelfItem:React.FC <ShelfProps> = ({ image, title, value })=>{
                     <InfoName>{title}</InfoName>
                     <InfoValue>{value}</InfoValue>
                 </Infos>
-                <BuyButton>COMPRAR</BuyButton>
+                <BuyButton 
+                    onClick={BuyElement} 
+                    disabled={confirmedBuy}
+                    style={{backgroundColor: background}}
+                >
+                    { buyText }
+                    { confirmedBuy ? <ImgIconConfirmed src={marioImg}/> : <div/> }
+                </BuyButton>
             </AreaInfo>
         </Container>
     );

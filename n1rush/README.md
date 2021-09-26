@@ -6,10 +6,11 @@ Para este teste, usarei React Js com Typescript, pois é a maneira que me sinto 
 
 No desenvolvimento do e-commerce, usei o método mobile-first. Esta linha de pensamento se concentra em começar a desenvolver a versão mobile primeiro. 
 
-* #1 - Desenvolver o Header, Banner, Home e themes - horário: 21:00 - [OK].
-* #2 - Middle Banner #1 e #2, Shelf - horário: 15:00 - [OK].
-* #3 - Click Buy, Footer, Shelf e contextAPI - horário: 19:40 - [OK].
-* #4 - Dinâmica do site, Carrossel, Menu, botão contato e botão pesquisa - horário: --:-- - [].
+* #1 - Desenvolver o Header, Banner, Home e themes - [OK].
+* #2 - Middle Banner #1 e #2, Shelf - [OK].
+* #3 - Click Buy, Footer, Shelf e contextAPI - [OK].
+* #4 - Dinâmica do site, Menu e pequenas modificações - [OK].
+* #5 - Carrossel, botão contato, botão pesquisa e Responsividade- [].
 
 ## :mega: Explicações de como funciona algumas dinâmicas :mega: :
 
@@ -17,7 +18,7 @@ No desenvolvimento do e-commerce, usei o método mobile-first. Esta linha de pen
 
 ### :bulb: Ideias :bulb: : 
 
--> Usar o Context para a dinâmica de compra de produtos, exiba a quantidade de jogos no carrinho e exiba a tela de compra bem-sucedida.
+-> Usar o Context para a dinâmica de compra de produtos, exiba a quantidade de jogos no carrinho e exiba a tela de compra realizada com sucesso.
 
 -> Usar framer-motion para fazer a animação do menu.
 
@@ -28,3 +29,5 @@ No desenvolvimento do e-commerce, usei o método mobile-first. Esta linha de pen
 -> Colocar as informações dos banner na pasta data em um arquivo '.ts'.
 
 -> Fatorar e organizar mais as informações do arquivo Home.ts e Home.tsx.
+
+-> Colocar o Banner como componente.

@@ -7,6 +7,7 @@ const theme = {
         main_sub_white: '#E5E5E5',
         main_sub_2_white: '#f5f5f5',
         main_dark_blue: '#084154',
+        main_line_cor: '#062C38',
     },
 };
 

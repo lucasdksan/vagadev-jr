@@ -78,4 +78,13 @@ export const BuyButton = styled.button`
     color: ${theme.colors.main_white};
     border: 0 none;
     outline: 0;
+    padding: 0px 18px;
+`;
+export const ImgIconConfirmed = styled.img`
+    z-index: 1;
+    position: relative;
+    top: -23px;
+    left: 8px;
+    width: 68px;
+    height: 79px;
 `;

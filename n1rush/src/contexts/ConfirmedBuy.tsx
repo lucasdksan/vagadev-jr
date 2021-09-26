@@ -10,9 +10,10 @@ interface ConfirmedProps {
 
 export const ConfirmedContext = createContext({} as ConfirmedProps);
 
-const ConfirmedProvider:React.FC <ConfirmedProps> = ({ children, ...rest })=>{
-    const [ product, setProduct ] = useState(rest.product ?? 0);
+export const ConfirmedProvider:React.FC = ({ children })=>{
+    const [ product, setProduct ] = useState(0);
     const [ isConfirmedBuyOpen, setIsConfirmedBuyOpen ] = useState(false);
+
     function ProductUp(){
         setProduct(1 + product);
         setIsConfirmedBuyOpen(true);
@@ -20,6 +21,7 @@ const ConfirmedProvider:React.FC <ConfirmedProps> = ({ children, ...rest })=>{
     function closeConfirmedBuy(){
         setIsConfirmedBuyOpen(false);
     }
+    
     return (
         <ConfirmedContext.Provider
             value={{
@@ -33,5 +35,3 @@ const ConfirmedProvider:React.FC <ConfirmedProps> = ({ children, ...rest })=>{
         </ConfirmedContext.Provider>
     );
 }
-
-export default ConfirmedProvider;
