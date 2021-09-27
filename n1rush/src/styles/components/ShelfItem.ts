@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import theme from '../colors/themes';
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,6 +12,10 @@ export const Container = styled.div`
     background: ${theme.colors.main_white};
     box-shadow: 0px 4px 20px 7px rgba(0, 0, 0, 0.07);
     border-radius: 10px;
+    @media(min-width: 500px){
+        width: 320px;
+        height: 400px;
+    }
 `;
 export const AreaImg = styled.div`
     display: flex;
@@ -21,6 +26,9 @@ export const AreaImg = styled.div`
     height: auto;
     padding: 24px 0px 10px 0px;
     margin-bottom: 10px;
+    @media(min-width: 500px){
+        margin-bottom: 0px;
+    }
 `;
 export const ImgGame = styled.img`
     width: 100%;
@@ -36,6 +44,9 @@ export const AreaInfo = styled.div`
     padding: 15px 24px;
     background-color: ${theme.colors.main_sub_2_white};
     border-top: 2px solid ${theme.colors.main_blue};
+    @media(min-width: 500px){
+        height: 180px;
+    }
 `;
 export const Infos = styled.div`
     display: flex;
@@ -80,7 +91,7 @@ export const BuyButton = styled.button`
     outline: 0;
     padding: 0px 18px;
 `;
-export const ImgIconConfirmed = styled.img`
+export const ImgIconConfirmed = styled(motion.img)`
     z-index: 1;
     position: relative;
     top: -23px;

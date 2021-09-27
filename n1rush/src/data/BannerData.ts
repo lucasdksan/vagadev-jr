@@ -17,13 +17,13 @@ const DataInfo = [
     },
     {
         key: 1,
-        name: 'RED DEAD REDEMPTION 2',
+        name: 'RED DEAD 2',
         imageM: redMimage,
         imageD: redDimage,
-        valueF: '299',
+        valueF: '199',
         valueS:',99',
         text: `
-        RDR 2 é um prólogo do primeiro jogo, ou seja, é ambientado um pouco antes da história original. O game se passa em 1899, quando ocorre o declínio do Velho Oeste Americano. O personagem principal é Arthur Morgan, um criminoso membro da gangue Van der Linde, comandada por Dutch Van der Linde e uma das mais famosas dos Estados Unidos.
+        RDR 2 é um prólogo do primeiro jogo, ou seja, é ambientado um pouco antes da história original. O game se passa em 1899, quando ocorre o declínio do Velho Oeste Americano.
         `,
     }
 ]

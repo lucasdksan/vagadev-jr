@@ -10,7 +10,8 @@ No desenvolvimento do e-commerce, usei o método mobile-first. Esta linha de pen
 * #2 - Middle Banner #1 e #2, Shelf - [OK].
 * #3 - Click Buy, Footer, Shelf e contextAPI - [OK].
 * #4 - Dinâmica do site, Menu e pequenas modificações - [OK].
-* #5 - Carrossel, botão contato, botão pesquisa e Responsividade- [].
+* #5 - Carrossel, botão contato, botão pesquisa e Responsividade- [OK].
+* #6 - Carrossel #2, Resto da responsividade e passar o pente fino - [].
 
 ## :mega: Explicações de como funciona algumas dinâmicas :mega: :
 
@@ -31,3 +32,5 @@ No desenvolvimento do e-commerce, usei o método mobile-first. Esta linha de pen
 -> Fatorar e organizar mais as informações do arquivo Home.ts e Home.tsx.
 
 -> Colocar o Banner como componente.
+
+-> Utilizar o Framer Motion para fazer o carrossel, poís a animação será mais simples com ela.

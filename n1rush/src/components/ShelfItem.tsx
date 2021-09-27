@@ -22,16 +22,19 @@ interface ShelfProps {
 }
 
 const ShelfItem:React.FC <ShelfProps> = ({ image, title, value })=>{
-    const { ProductUp } = useContext(ConfirmedContext);
+    const { ProductUp, SetProductsListAdd } = useContext(ConfirmedContext);
     const [ confirmedBuy, setConfirmedBuy ] = useState(false);
     const [ buyText, setBuyText ] = useState('COMPRAR');
     const [ background, setBackground ] = useState(theme.colors.main_blue);
+
     function BuyElement(){
         ProductUp();
         setConfirmedBuy(true);
+        SetProductsListAdd({name: title, value});
         setBuyText('COMPRADO!');
         setBackground(theme.colors.main_dark_blue);
     }
+    
     return(
         <Container>
             <AreaImg>

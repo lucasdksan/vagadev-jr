@@ -20,6 +20,11 @@ export const FirstBlock = styled.div`
     height: 68px;
     background: ${theme.colors.main_dark_blue};
     padding: 20px 20px 20px 16px;
+    @media(min-width: 500px){
+        width: 200px;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
 `;
 export const LogoImg = styled.img`
     width: 43px;
