@@ -11,12 +11,7 @@ export const Container = styled.div`
     &.open{
         transform: translateX(0);
     }
-    @media (min-width: 1024px) {
-        &.scrollOpen{
-            transform: translateX(0);
-        }
-        &.scrollOpen .active--close{
-            display: none;
-        }
+    @media (min-width: 1000px) {
+        display: none;
     }
 `;

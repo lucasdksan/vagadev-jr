@@ -23,6 +23,9 @@ export const Card = styled.div`
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+    @media(min-width: 500px){
+        width: 400px;
+    }
 `;
 export const FirstBlock = styled.div`
     display: flex;

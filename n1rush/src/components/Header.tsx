@@ -25,7 +25,9 @@ import { Container,
         IconFace,
         IconInst,
         IconWhats,
-        IconSearch} from '../styles/components/Header';
+        IconSearch,
+        AreaIcon,
+        TextIcon } from '../styles/components/Header';
 
 import { ConfirmedContext } from '../contexts/ConfirmedBuy';
 import SideMenu from './SideMenu';
@@ -47,9 +49,9 @@ const Header = ()=>{
     const [ menuOp, setMenuOp ] = useState(false);
     const [ bagPosition, setBagPosition ] = useState(-300);
     const [ bagOld, setBagOld ] = useState(60);
-    const [ contactPosition, setContactPosition ] = useState(-800);
+    const [ contactPosition, setContactPosition ] = useState(-3000);
     const [ contactOld, setContactOld ] = useState(0);
-    const [ searchPosition, setSearchPosition ] = useState(-800);
+    const [ searchPosition, setSearchPosition ] = useState(-3000);
     const [ resultSearch, setResultSearch ] = useState('');
     const [ searchOld, setSearchOld ] = useState(0);
     const [scrollY, setScrollY] = useState(0);
@@ -78,9 +80,9 @@ const Header = ()=>{
     }
     function handleOpenBag(){
         setContactOld(0);
-        setContactPosition(-800);
+        setContactPosition(-3000);
         setSearchOld(0);
-        setSearchPosition(-800);
+        setSearchPosition(-3000);
         const aux = bagOld;
         setBagOld(bagPosition);
         setBagPosition(aux);
@@ -89,7 +91,7 @@ const Header = ()=>{
         setBagOld(60);
         setBagPosition(-300);
         setSearchOld(0);
-        setSearchPosition(-800);
+        setSearchPosition(-3000);
         const aux = contactOld;
         setContactOld(contactPosition);
         setContactPosition(aux);
@@ -98,7 +100,7 @@ const Header = ()=>{
         setBagOld(60);
         setBagPosition(-300);
         setContactOld(0);
-        setContactPosition(-800);
+        setContactPosition(-3000);
         const aux = searchOld;
         setSearchOld(searchPosition);
         setSearchPosition(aux);
@@ -112,19 +114,23 @@ const Header = ()=>{
             <Container
                 style={{backgroundColor: background}}
             >
-                <ButtonMenu onClick={handelToggle}>
-                    <IconMenu src={menuOp ? cancelIcon :  menuIcon} alt='Menu Icon'/>
-                </ButtonMenu>
-                <LogoIcon src={logoIcon} alt='Logo Icon'/>
+                <AreaIcon>
+                    <ButtonMenu onClick={handelToggle}>
+                        <IconMenu src={menuOp ? cancelIcon :  menuIcon} alt='Menu Icon'/>
+                    </ButtonMenu>
+                    <LogoIcon src={logoIcon} alt='Logo Icon'/>
+                </AreaIcon>
                 <ButtonsArea>
                     <ButtonsIcon onClick={handleOpenContact}>
                         <LogoIcon src={paperIcon} alt='Button Icon'/>
+                        <TextIcon>CONTATO</TextIcon>
                     </ButtonsIcon>
                     <ButtonsIcon onClick={handleOpenSearch}>
                         <LogoIcon src={searchIcon} alt='Button Icon'/>
+                        <TextIcon>BUSCAR</TextIcon>
                     </ButtonsIcon>
                     <ShoppingContent>
-                        <ButtonsIcon onClick={handleOpenBag}>
+                        <ButtonsIcon onClick={handleOpenBag} className='last'>
                             <LogoIcon src={shoppingIcon} alt='Button Icon'/>
                         </ButtonsIcon>
                         {(product !== 0) ? (<CircleNumber>{product}</CircleNumber>) : <div/>}

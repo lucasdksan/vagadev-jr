@@ -29,6 +29,11 @@ export const Banner = styled.section`
     @media(min-width: 500px){
         height: 680px;
     }
+    @media(min-width: 700px){
+        flex-direction: row;
+        justify-content: space-between;
+        height: 760px;
+    }
 `;
 export const SliderNav = styled.div`
     display: flex;
@@ -37,6 +42,18 @@ export const SliderNav = styled.div`
     flex-direction: row;
     width: 100%;
     height: 53px;
+    @media(min-width: 700px){
+        position: absolute;
+        width: 400px;
+        height: 60px;
+        top: 50%;
+        left: 65%;
+        transform: rotateZ(90deg);
+    }
+    @media(min-width: 900px){
+        top: 45%;
+        left: 74%;
+    }
 `;
 export const SlideNavTitle = styled.div`
     display: flex;
@@ -48,6 +65,9 @@ export const SlideNavTitle = styled.div`
     height: 100%;
     width: 100%;
     background-color: ${theme.colors.main_blue};
+    @media(min-width: 700px){
+        border-radius: 10px 0px 0px 10px;
+    }
 `;
 export const NavTitle = styled.h1`
     font-family: 'Roboto';
@@ -65,6 +85,11 @@ export const SliderNavButtons = styled.div`
     width: 140px;
     height: 100%;
     background-color: ${theme.colors.main_dark_blue};
+    @media(min-width: 700px){
+        width: 100px;
+        height: 100%;
+        border-radius: 0px 10px 10px 0px;
+    }
 `;
 export const NumberBlock = styled.span`
     font-family: 'Roboto';
@@ -73,6 +98,9 @@ export const NumberBlock = styled.span`
     font-size: 14px;
     line-height: 16px;
     color: ${theme.colors.main_white};
+    @media(min-width: 700px){
+        transform: rotateZ(-90deg);
+    }
 `;
 export const ButtonArea = styled.div`
     display: flex;
@@ -81,6 +109,11 @@ export const ButtonArea = styled.div`
     height: 18px;
     width: 50px;
     flex-direction: row;
+    @media(min-width: 700px){
+        transform: rotateZ(-90deg);
+        height: 20px;
+        width: 35px;
+    }
 `;
 export const ButtonNavigation = styled.button`
     display: flex;
@@ -103,6 +136,13 @@ export const MiddleBanner = styled.section`
     flex-direction: column;
     padding: 10px 19px;
     width: 100%;
+    @media(min-width: 700px){
+        flex-direction: row;
+        margin-top: -120px;
+    }
+    @media(min-width: 900px){
+        margin-top: -150px;
+    }
 `;
 export const ShelfArea = styled.section`
     display: flex;
@@ -112,6 +152,9 @@ export const ShelfArea = styled.section`
     width: 100%;
     height: 590px;
     padding: 20px;
+    @media(min-width: 900px){
+        padding: 60px 40px 0px 40px;
+    }
 `;
 export const TitleAreaShelf = styled.div`
     display: flex;
@@ -121,11 +164,19 @@ export const TitleAreaShelf = styled.div`
     width: 100%;
     height: 20px;
     margin-bottom: 30px;
+    @media(min-width: 900px){
+        margin-bottom: 0px;
+        padding-left: 50px;
+    }
 `;
 export const ShelfTitleIcon = styled.img`
     width: 18px;
     height: 18px;
     margin-right: 10px;
+    @media(min-width: 900px){
+        width: 22px;
+        height: 22px;
+    }
 `;
 export const TitleShelf = styled.h1`
     font-family: 'Roboto';
@@ -134,6 +185,9 @@ export const TitleShelf = styled.h1`
     font-size: 18px;
     line-height: 21px;
     color: ${theme.colors.main_dark_blue};
+    @media(min-width: 900px){
+        font-size: 26px;
+    }
 `;
 export const ShelfElementArea = styled.article`
     display: flex;
@@ -143,6 +197,9 @@ export const ShelfElementArea = styled.article`
     flex: 1;
     width: 100%;
     height: auto;
+    @media(min-width: 900px){
+        display: none;
+    }
 `;
 export const ShelfButton = styled.button`
     display: flex;

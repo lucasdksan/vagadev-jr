@@ -8,12 +8,16 @@ export const Container = styled(motion.div)`
     justify-content: center;
     flex-direction: column;
     width: 260px;
-    height: 450px;
+    height: 400px;
     background: ${theme.colors.main_white};
     box-shadow: 0px 4px 20px 7px rgba(0, 0, 0, 0.07);
     border-radius: 10px;
     @media(min-width: 500px){
         width: 320px;
+        height: 480px;
+    }
+    @media(min-width: 900px){
+        width: 240px;
         height: 400px;
     }
 `;
@@ -32,7 +36,14 @@ export const AreaImg = styled.div`
 `;
 export const ImgGame = styled.img`
     width: 100%;
-    height: 100%;
+    height: 230px;
+    @media(min-width: 500px){
+        width: 90%;
+        height: 295px;
+    }
+    @media(min-width: 900px){
+        height: 230px;
+    }
 `;
 export const AreaInfo = styled.div`
     display: flex;
@@ -45,7 +56,7 @@ export const AreaInfo = styled.div`
     background-color: ${theme.colors.main_sub_2_white};
     border-top: 2px solid ${theme.colors.main_blue};
     @media(min-width: 500px){
-        height: 180px;
+        height: 150px;
     }
 `;
 export const Infos = styled.div`
@@ -55,6 +66,9 @@ export const Infos = styled.div`
     width: 100%;
     height: 48px;
     flex-direction: column;
+    @media(min-width: 500px){
+        height: 50px;
+    }
 `;
 export const InfoName = styled.h1`
     font-family: 'Roboto';
@@ -63,6 +77,12 @@ export const InfoName = styled.h1`
     font-size: 14px;
     line-height: 16px;
     color: ${theme.colors.main_dark_blue};
+    @media(min-width: 500px){
+        font-size: 16px;
+    }
+    @media(min-width: 900px){
+        font-size: 14px;
+    }
 `;
 export const InfoValue = styled.span`
     font-family: 'Roboto';
@@ -71,6 +91,12 @@ export const InfoValue = styled.span`
     font-size: 18px;
     line-height: 21px;
     color: ${theme.colors.main_dark_blue};
+    @media(min-width: 500px){
+        font-size: 20px;
+    }
+    @media(min-width: 900px){
+        font-size: 18px;
+    }
 `;
 export const BuyButton = styled.button`
     display: flex;
@@ -90,6 +116,10 @@ export const BuyButton = styled.button`
     border: 0 none;
     outline: 0;
     padding: 0px 18px;
+    @media(min-width: 500px){
+        width: 180px;
+        height: 45px;
+    }
 `;
 export const ImgIconConfirmed = styled(motion.img)`
     z-index: 1;

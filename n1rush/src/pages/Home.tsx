@@ -25,6 +25,7 @@ import Footer from '../components/Footer';
 import MiddleBannerArea from '../components/MiddleBannerArea';
 import ShelfItem from '../components/ShelfItem';
 import BannerImg from '../components/BannerImg';
+import AllShelf from '../components/AllShelf';
 
 import leftButton from '../assets/svgs/angle-left-solid.svg';
 import rightButton from '../assets/svgs/angle-right-solid.svg';
@@ -43,7 +44,15 @@ const Home = ()=>{
     function handlePreviousBanner(){
         setNumberBar(2);
     }
-
+    function selectBanner(value: number){
+        let width = window.innerWidth;
+        if(width >= 700){
+            return bannerData[value].imageD;
+        } else {
+            return bannerData[value].imageM;
+        }
+    }
+    console.log(window.screen.width);
     return(
         <>
             <Header/>
@@ -52,7 +61,7 @@ const Home = ()=>{
                     <BannerImg
                         key={bannerData[(numberBar-1)].key}
                         name={bannerData[(numberBar-1)].name}
-                        image={bannerData[(numberBar-1)].imageM}
+                        image={selectBanner(numberBar-1)}
                         text={bannerData[(numberBar-1)].text}
                         valueF={bannerData[(numberBar-1)].valueF}
                         valueS={bannerData[(numberBar-1)].valueS}
@@ -100,6 +109,7 @@ const Home = ()=>{
                         />
                         <ShelfButton><RightArrow/></ShelfButton>
                     </ShelfElementArea>
+                    <AllShelf/>
                 </ShelfArea>
             </Container>
             <Footer/>
