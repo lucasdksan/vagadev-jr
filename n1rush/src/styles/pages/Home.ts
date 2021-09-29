@@ -215,6 +215,11 @@ export const ShelfElementArea = styled.article`
         > div:first-child div.rec-slider-container{
             margin: 0px 0px;
         }
+        > div.rec-pagination button.rec-dot_active{
+            background-color: ${theme.colors.main_dark_blue};
+            border: 0px none;
+            box-shadow: none;
+        }
     }
     @media(min-width: 900px){
         display: none;
