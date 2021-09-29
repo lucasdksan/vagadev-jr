@@ -30,7 +30,7 @@ const ShelfItem:React.FC <ShelfProps> = ({ image, title, value })=>{
     function BuyElement(){
         ProductUp();
         setConfirmedBuy(true);
-        SetProductsListAdd({name: title, value});
+        SetProductsListAdd({name: title, value, image});
         setBuyText('COMPRADO!');
         setBackground(theme.colors.main_dark_blue);
     }
@@ -48,7 +48,7 @@ const ShelfItem:React.FC <ShelfProps> = ({ image, title, value })=>{
                 <BuyButton 
                     onClick={BuyElement} 
                     disabled={confirmedBuy}
-                    style={{backgroundColor: background}}
+                    backgroundColor={background}
                 >
                     { buyText }
                     { confirmedBuy ? <ImgIconConfirmed src={marioImg}/> : <div/> }

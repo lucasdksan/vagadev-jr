@@ -44,6 +44,9 @@ export const ButtonCancel = styled.button`
     outline: 0;
     background-color: transparent;
     padding: 6px 6px;
+    &:hover{
+        cursor: pointer;
+    }
 `;
 export const CancelIcon = styled.img`
     width: 100%;

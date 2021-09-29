@@ -46,13 +46,9 @@ export const SliderNav = styled.div`
         position: absolute;
         width: 400px;
         height: 60px;
-        top: 50%;
-        left: 65%;
+        top: 320px;
+        right: -170px;
         transform: rotateZ(90deg);
-    }
-    @media(min-width: 900px){
-        top: 45%;
-        left: 74%;
     }
 `;
 export const SlideNavTitle = styled.div`
@@ -66,7 +62,7 @@ export const SlideNavTitle = styled.div`
     width: 100%;
     background-color: ${theme.colors.main_blue};
     @media(min-width: 700px){
-        border-radius: 10px 0px 0px 10px;
+        border-radius: 0px 0px 0px 10px;
     }
 `;
 export const NavTitle = styled.h1`
@@ -88,7 +84,7 @@ export const SliderNavButtons = styled.div`
     @media(min-width: 700px){
         width: 100px;
         height: 100%;
-        border-radius: 0px 10px 10px 0px;
+        border-radius: 0px 0px 10px 0px;
     }
 `;
 export const NumberBlock = styled.span`
@@ -124,6 +120,7 @@ export const ButtonNavigation = styled.button`
     outline: 0;
     width: 10px;
     height: 18px;
+    cursor: pointer;
 `;
 export const IconMenu = styled.img`
     width: 100%;
@@ -155,6 +152,12 @@ export const ShelfArea = styled.section`
     @media(min-width: 900px){
         padding: 60px 40px 0px 40px;
     }
+    @media(min-width: 1000px){
+        padding: 60px 100px 0px 100px;
+    }
+    @media(min-width: 1260px){
+        padding: 60px 180px 0px 180px;
+    }
 `;
 export const TitleAreaShelf = styled.div`
     display: flex;
@@ -167,6 +170,9 @@ export const TitleAreaShelf = styled.div`
     @media(min-width: 900px){
         margin-bottom: 0px;
         padding-left: 50px;
+    }
+    @media(min-width: 1100px){
+        margin-bottom: 60px;
     }
 `;
 export const ShelfTitleIcon = styled.img`

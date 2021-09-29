@@ -2,6 +2,10 @@
 
 Para este teste, usarei React Js com Typescript, pois é a maneira que me sinto mais confortável para desenvolver qualquer projeto Web/Mobie.
 
+# OBSERVAÇÃO IMPORTANTE:
+
+Ao analisar a capacidade de resposta é sempre importante atualizar a guia para modificar as imagens do banner. Isso em relação às imagens para as versões mobile e desktop.
+
 ## :iphone: Mobile :iphone: :
 
 No desenvolvimento do e-commerce, usei o método mobile-first. Esta linha de pensamento se concentra em começar a desenvolver a versão mobile primeiro. 
@@ -12,7 +16,7 @@ No desenvolvimento do e-commerce, usei o método mobile-first. Esta linha de pen
 * #4 - Dinâmica do site, Menu e pequenas modificações - [OK].
 * #5 - Carrossel, botão contato, botão pesquisa e Responsividade- [OK].
 * #6 - Resto da responsividade e passar o pente fino - [OK].
-* #7 - Carrossel #2 e passar o pente fino novamente - [].
+* #7 - Carrossel #2 e passar o pente fino novamente - [OK].
 
 ## :mega: Explicações de como funciona algumas dinâmicas :mega: :
 

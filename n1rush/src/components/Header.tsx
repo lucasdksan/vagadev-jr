@@ -9,30 +9,17 @@ import { Container,
         ButtonsIcon,
         CircleNumber,
         ShoppingContent,
-        SectionBuyProducts,
-        AreaTitle,
-        Title,
-        AreaInfo,
-        InfoName,
-        InfoValue,
-        Infos,
         AreaSearch,
         Search,
         ButtonSearch,
-        AreaContact,
-        ButtonContact,
-        IconEmail,
-        IconFace,
-        IconInst,
-        IconWhats,
         IconSearch,
         AreaIcon,
         TextIcon } from '../styles/components/Header';
 
 import { ConfirmedContext } from '../contexts/ConfirmedBuy';
+import SectionBuyProducts from './SectionBuyProducts';
 import SideMenu from './SideMenu';
 import Menu from './Menu';
-import Ops from './Ops';
 
 import menuIcon from '../assets/svgs/icon_hamburguer.svg';
 import cancelIcon from '../assets/svgs/iconHamburguerClose.svg';
@@ -40,14 +27,16 @@ import paperIcon from '../assets/svgs/paper-plane.svg';
 import searchIcon from '../assets/svgs/search-solid.svg';
 import shoppingIcon from '../assets/svgs/shopping-bag-solid.svg';
 import logoIcon from '../assets/svgs/logo-icon.svg';
+import AreaContact from './AreaContact';
+import MenuD from './MenuD';
 
 
 const Header = ()=>{
-    const { product, unituProducts } = useContext(ConfirmedContext);
+    const { product } = useContext(ConfirmedContext);
     const { y: pageYOffset } = useWindowScroll();
     const [ background, setBackground ] = useState('transparent');
     const [ menuOp, setMenuOp ] = useState(false);
-    const [ bagPosition, setBagPosition ] = useState(-300);
+    const [ bagPosition, setBagPosition ] = useState(-3000);
     const [ bagOld, setBagOld ] = useState(60);
     const [ contactPosition, setContactPosition ] = useState(-3000);
     const [ contactOld, setContactOld ] = useState(0);
@@ -55,6 +44,7 @@ const Header = ()=>{
     const [ resultSearch, setResultSearch ] = useState('');
     const [ searchOld, setSearchOld ] = useState(0);
     const [scrollY, setScrollY] = useState(0);
+    const [ opacityAnimate, setOpacityAnimate ] = useState([0]);
 
     useEffect(()=>{
         if(pageYOffset > 160){
@@ -89,7 +79,7 @@ const Header = ()=>{
     }
     function handleOpenContact(){
         setBagOld(60);
-        setBagPosition(-300);
+        setBagPosition(-3000);
         setSearchOld(0);
         setSearchPosition(-3000);
         const aux = contactOld;
@@ -98,15 +88,25 @@ const Header = ()=>{
     }
     function handleOpenSearch(){
         setBagOld(60);
-        setBagPosition(-300);
+        setBagPosition(-3000);
         setContactOld(0);
         setContactPosition(-3000);
         const aux = searchOld;
         setSearchOld(searchPosition);
         setSearchPosition(aux);
     }
+    function handleAdaptation(value: number){
+        if(value > 9){
+            return '+9';
+        } else {
+            return value;
+        }
+    }
     function handleSearch(){
         console.log(resultSearch);
+    }
+    function handlerOpenMenuDes(){
+        setOpacityAnimate([0, 0.2, 0.5, 0.8, 1]);
     }
 
     return(
@@ -116,7 +116,17 @@ const Header = ()=>{
             >
                 <AreaIcon>
                     <ButtonMenu onClick={handelToggle}>
-                        <IconMenu src={menuOp ? cancelIcon :  menuIcon} alt='Menu Icon'/>
+                        <IconMenu src={menuOp ? cancelIcon : menuIcon} alt='Menu Icon'/>
+                    </ButtonMenu>
+                    <ButtonMenu className='button-desk'
+                        onFocus={handlerOpenMenuDes}
+                        onClick={handlerOpenMenuDes}
+                    >
+                        <IconMenu 
+                            src={menuIcon} 
+                            alt='Menu Icon'
+                        />
+                        <MenuD opacityAnimate={opacityAnimate}/>
                     </ButtonMenu>
                     <LogoIcon src={logoIcon} alt='Logo Icon'/>
                 </AreaIcon>
@@ -133,60 +143,21 @@ const Header = ()=>{
                         <ButtonsIcon onClick={handleOpenBag} className='last'>
                             <LogoIcon src={shoppingIcon} alt='Button Icon'/>
                         </ButtonsIcon>
-                        {(product !== 0) ? (<CircleNumber>{product}</CircleNumber>) : <div/>}
+                        {
+                            ( product !== 0 ) ? (
+                                <CircleNumber>
+                                    {handleAdaptation(product)}
+                                </CircleNumber>
+                            ) : <div/>
+                        }
                     </ShoppingContent>
                 </ButtonsArea>
             </Container>
             <SideMenu>
                 <Menu/>
             </SideMenu>
-            <SectionBuyProducts
-                initial={{
-                    y: -300,
-                    opacity: 0,
-                }}
-                animate={{
-                    y: bagPosition,
-                    opacity: [0, 0.2, 0.5, 0.8, 1],
-                }}
-                transition={{
-                    type: 'spring',
-                    stiffness: 40,
-                }}
-            >
-                <AreaTitle><Title>Sua Sacola</Title></AreaTitle>
-                <AreaInfo>
-                    {
-                        (product === 0) ? <Ops/> :
-                        unituProducts.map((itens)=>{
-                            return(
-                                <Infos key={itens.name}>
-                                    <InfoName>{itens.name}</InfoName>
-                                    <InfoValue>{itens.value}</InfoValue>
-                                </Infos>
-                            );
-                        })
-                    }
-                </AreaInfo>
-            </SectionBuyProducts>
-            <AreaContact
-                initial={{
-                    opacity: 0,
-                }}
-                animate={{
-                    x: contactPosition,
-                    opacity: [0, 0.2, 0.5, 0.8, 1],
-                }}
-                transition={{
-                    type: 'spring',
-                    stiffness: 40,
-                }}
-            >
-                <ButtonContact href="tel:2122982332" target='_blank'><IconWhats/></ButtonContact>
-                <ButtonContact href='https://www.instagram.com/agencian1/' target='_blank'><IconInst/></ButtonContact>
-                <ButtonContact href='https://www.facebook.com/search/top?q=agencia%20n1' target='_blank'><IconFace/></ButtonContact>
-                <ButtonContact href="mailto:contato@agencian1.com.br" target='_blank'><IconEmail/></ButtonContact>
-            </AreaContact>
+            <SectionBuyProducts bagPosition={bagPosition}/>
+            <AreaContact contactPosition={contactPosition}/>
             <AreaSearch
                 initial={{
                     opacity: 0,

@@ -15,6 +15,9 @@ export const MiddleBanner = styled.div`
     @media(min-width: 900px){
         width: 400px;
     }
+    @media(min-width: 1100px){
+        width: 480px;
+    }
 `;
 export const MiddleBannerImg = styled.img`
     width: 100%;
@@ -27,6 +30,9 @@ export const MiddleBannerImg = styled.img`
     }
     @media(min-width: 900px){
         height: 290px;
+    }
+    @media(min-width: 1100px){
+        height: 320px;
     }
 `;
 export const RectInfo = styled.div`

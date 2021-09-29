@@ -68,7 +68,7 @@ const Home = ()=>{
                     />
                     <SliderNav>
                         <SlideNavTitle>
-                            <NavTitle>MORTAL KOMBAT</NavTitle>
+                            <NavTitle>{bannerData[(numberBar-1)].name}</NavTitle>
                         </SlideNavTitle>
                         <SliderNavButtons>
                             <NumberBlock>

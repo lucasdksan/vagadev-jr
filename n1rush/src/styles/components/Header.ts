@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
-import { AiOutlineInstagram, AiOutlineFacebook, AiOutlineWhatsApp, AiOutlineMail, AiOutlineSearch } from 'react-icons/ai'
+import { AiOutlineSearch } from 'react-icons/ai'
 
 import theme from '../colors/themes';
 
@@ -21,7 +21,7 @@ export const Container = styled(motion.header)`
     justify-content: space-around;
     flex-direction: row;
     width: 100%;
-    height: 60px;
+    height: 80px;
     padding: 16px 13px 10px 18px;
     background-color: transparent;
     position: fixed;
@@ -32,8 +32,11 @@ export const Container = styled(motion.header)`
     @media(min-width: 700px){
         justify-content: space-around;
     }
+    @media(min-width: 1000px){
+        padding: 30px 13px 20px 18px;
+    }
 `;
-export const ButtonMenu = styled.button`
+export const ButtonMenu = styled(motion.button)`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,6 +45,10 @@ export const ButtonMenu = styled.button`
     background-color: transparent;
     border: 0 none;
     outline: 0;
+    cursor: pointer;
+    @media (min-width: 1000px) {
+        display: none;
+    }
 `;
 export const AreaIcon = styled.div`
     display: flex;
@@ -51,6 +58,13 @@ export const AreaIcon = styled.div`
     width: 160px;
     @media(min-width: 500px){
         width: 220px;
+    }
+    > .button-desk{
+        display: none;
+        @media (min-width: 1000px) {
+            display: block;
+            margin-right: 40px;
+        }
     }
 `;
 export const IconMenu = styled.img`
@@ -75,9 +89,9 @@ export const ButtonsArea = styled.div`
     @media(min-width: 700px){
         width: 360px;
         justify-content: space-around;
-        > a:last-child{
-            border-right: none;
-        }
+    }
+    @media(min-width: 1000px){
+        width: 480px;
     }
 `;
 export const TextIcon = styled.h2`
@@ -120,6 +134,9 @@ export const ShoppingContent = styled.div`
         > a{
             border-right: none;
             padding-left: 30px;
+            @media(min-width: 1000px){
+                padding-left: 5px;
+            }
         }
     }
 `;
@@ -139,74 +156,6 @@ export const CircleNumber = styled.span`
     margin-left: -10px;
     margin-top: -5px;
 `;
-export const SectionBuyProducts = styled(motion.div)`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    flex-direction: column;
-    width: 100%;
-    height: 200px;
-    position: fixed;
-    z-index: 100;
-    background-color: ${theme.colors.main_dark_blue};
-    border: 1px solid ${theme.colors.main_blue};
-    border-radius: 0px 0px 20px 20px;
-    @media(min-width: 700px){
-        height: 280px;
-    }
-`;
-export const AreaTitle = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 30px;
-    padding: 5px;
-`;
-export const Title = styled.h1`
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 24px;
-    line-height: 28px;
-    color: ${theme.colors.main_white};
-`;
-export const AreaInfo = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    height: 170px;
-    flex-direction: row;
-`;
-export const Infos = styled.div`
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    height: 100px;
-    flex-direction: column;
-    border: 1px solid ${theme.colors.main_white};
-    background-color: ${theme.colors.main_blue};
-    padding: 15px;
-    border-radius: 10px;
-`;
-export const InfoName = styled.h1`
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 16px;
-    color: ${theme.colors.main_white};
-`;
-export const InfoValue = styled.span`
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 14px;
-    line-height: 21px;
-    color: ${theme.colors.main_white};
-`;
 export const AreaSearch = styled(motion.div)`
     display: flex;
     align-items: center;
@@ -224,6 +173,13 @@ export const AreaSearch = styled(motion.div)`
     @media(min-width: 700px){
         height: 100px;
         padding: 10px 150px;
+    }
+    @media(min-width: 900px){
+        width: 70%;
+        border-radius: 0px 0px 0px 20px;
+    }
+    @media(min-width: 1000px){
+        top: 80px;
     }
 `;
 export const Search = styled.input`
@@ -243,53 +199,15 @@ export const ButtonSearch = styled.button`
     align-items: center;
     justify-content: center;
     height: 35px;
-    width: 40px;
+    width: 35px;
     background-color: ${theme.colors.main_blue};
     border-radius: 0px 10px 10px 0px;
     border: 0 none;
     outline: 0;
-    &:hover{
-        cursor: pointer;
-        background-color: ${theme.colors.main_white};
-    }
+    transition: linear 0.5s;
     @media(min-width: 700px){
         height: 50px;
         width: 80px;
     }
 `;
-export const AreaContact = styled(motion.div)`
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: ${theme.colors.main_dark_blue};
-    width: 65%;
-    padding: 10px 25px;
-    flex-direction: row;
-    height: 80px;
-    border-radius: 0px 0px 0px 15px;
-    position: fixed;
-    top: 60px;
-    z-index: 100;
-    right: 0;
-    @media(min-width: 700px){
-        height: 100px;
-    }
-`;
-export const ButtonContact = styled.a`
-    text-decoration: none;
-    width: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    &:hover{
-        cursor: pointer;
-    }
-    @media(min-width: 700px){
-        width: 70px;
-    }
-`;
-export const IconWhats = styled(AiOutlineWhatsApp)`${stylesIcons}`;
-export const IconEmail = styled(AiOutlineMail)`${stylesIcons}`;
-export const IconInst = styled(AiOutlineInstagram)`${stylesIcons}`;
-export const IconFace = styled(AiOutlineFacebook)`${stylesIcons}`;
 export const IconSearch = styled(AiOutlineSearch)`${stylesIcons}`;

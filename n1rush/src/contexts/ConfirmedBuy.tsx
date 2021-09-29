@@ -1,10 +1,11 @@
 import React, { createContext, useState } from 'react';
 
-import ClickBuy from '../components/ClickBuy';
+import Confirmed from '../components/Confirmed';
 
 type unityProduct = {
     name: string,
     value: string,
+    image: string;
 }
 interface ConfirmedProps {
     product: number;
@@ -31,7 +32,8 @@ export const ConfirmedProvider:React.FC = ({ children })=>{
     function SetProductsListAdd(productItem: unityProduct){
         setUnituProducts([...unituProducts, {
             name: productItem.name,
-            value: productItem.value
+            value: productItem.value,
+            image: productItem.image
          }]);
     }
     
@@ -46,7 +48,7 @@ export const ConfirmedProvider:React.FC = ({ children })=>{
             }}
         >
             { children }
-            { isConfirmedBuyOpen && <ClickBuy/> }
+            { isConfirmedBuyOpen && <Confirmed/> }
         </ConfirmedContext.Provider>
     );
 }

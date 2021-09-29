@@ -9,7 +9,7 @@ import { Container,
         Title,
         Line,
         TargetInfo,
-        ImgMario } from '../styles/components/ClickBuy';
+        ImgMario } from '../styles/components/Confirmed';
 
 import { ConfirmedContext } from '../contexts/ConfirmedBuy';
 

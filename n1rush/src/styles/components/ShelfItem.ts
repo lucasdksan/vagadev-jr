@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import theme from '../colors/themes';
 
+interface ButtonProps{
+    backgroundColor?: string;
+}
+
 export const Container = styled(motion.div)`
     display: flex;
     align-items: center;
@@ -19,6 +23,10 @@ export const Container = styled(motion.div)`
     @media(min-width: 900px){
         width: 240px;
         height: 400px;
+    }
+    @media(min-width: 1100px){
+        width: 300px;
+        height: 480px;
     }
 `;
 export const AreaImg = styled.div`
@@ -43,6 +51,9 @@ export const ImgGame = styled.img`
     }
     @media(min-width: 900px){
         height: 230px;
+    }
+    @media(min-width: 1100px){
+        height: 300px;
     }
 `;
 export const AreaInfo = styled.div`
@@ -98,13 +109,13 @@ export const InfoValue = styled.span`
         font-size: 18px;
     }
 `;
-export const BuyButton = styled.button`
+export const BuyButton = styled.button<ButtonProps>`
     display: flex;
     align-items: center;
     justify-content: center;
     width: 162px;
     height: 35px;
-    background: ${theme.colors.main_blue};
+    background: ${(props)=> props.backgroundColor };
     border-radius: 5px;
     font-family: 'Roboto';
     font-style: normal;
@@ -116,6 +127,11 @@ export const BuyButton = styled.button`
     border: 0 none;
     outline: 0;
     padding: 0px 18px;
+    transition: linear 0.5s;
+    &:hover{
+        cursor: pointer;
+        background-color: ${theme.colors.main_dark_blue};
+    }
     @media(min-width: 500px){
         width: 180px;
         height: 45px;
