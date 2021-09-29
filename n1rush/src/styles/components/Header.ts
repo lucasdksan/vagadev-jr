@@ -56,15 +56,21 @@ export const AreaIcon = styled.div`
     justify-content: center;
     flex-direction: row;
     width: 160px;
-    @media(min-width: 500px){
-        width: 220px;
-    }
     > .button-desk{
         display: none;
         @media (min-width: 1000px) {
             display: block;
             margin-right: 40px;
         }
+    }
+    > .area-desk{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    @media(min-width: 500px){
+        width: 220px;
     }
 `;
 export const IconMenu = styled.img`

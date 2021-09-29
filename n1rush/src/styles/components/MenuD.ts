@@ -6,8 +6,8 @@ import theme from '../colors/themes';
 export const Container = styled(motion.nav)`
     display: none;
     @media(min-width: 1000px){
-        position: relative;
-        z-index: 10;
+        position: fixed;
+        z-index: 100;
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
@@ -18,9 +18,24 @@ export const Container = styled(motion.nav)`
         box-shadow: 10px 10px 1px ${theme.colors.main_blue};
         border-radius: 5px;
         border: 2px solid ${theme.colors.main_blue};
-        position: relative;
-        top: 34px;
-        left: -35px;
+        top: 93px;
+        left: 70px;
+    }
+    @media(min-width: 1050px){
+        top: 93px;
+        left: 85px;
+    }
+    @media(min-width: 1100px){
+        top: 93px;
+        left: 100px;
+    }
+    @media(min-width: 1200px){
+        top: 93px;
+        left: 125px;
+    }
+    @media(min-width: 1300px){
+        top: 93px;
+        left: 160px;
     }
 `;
 export const SectionsButtons = styled.div`

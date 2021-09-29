@@ -20,6 +20,7 @@ import { ConfirmedContext } from '../contexts/ConfirmedBuy';
 import SectionBuyProducts from './SectionBuyProducts';
 import SideMenu from './SideMenu';
 import Menu from './Menu';
+import MenuD from './MenuD';
 
 import menuIcon from '../assets/svgs/icon_hamburguer.svg';
 import cancelIcon from '../assets/svgs/iconHamburguerClose.svg';
@@ -28,8 +29,6 @@ import searchIcon from '../assets/svgs/search-solid.svg';
 import shoppingIcon from '../assets/svgs/shopping-bag-solid.svg';
 import logoIcon from '../assets/svgs/logo-icon.svg';
 import AreaContact from './AreaContact';
-import MenuD from './MenuD';
-
 
 const Header = ()=>{
     const { product } = useContext(ConfirmedContext);
@@ -43,8 +42,9 @@ const Header = ()=>{
     const [ searchPosition, setSearchPosition ] = useState(-3000);
     const [ resultSearch, setResultSearch ] = useState('');
     const [ searchOld, setSearchOld ] = useState(0);
-    const [scrollY, setScrollY] = useState(0);
-    const [ opacityAnimate, setOpacityAnimate ] = useState([0]);
+    const [ scrollY, setScrollY ] = useState(0);
+    const [ opacityConfirmed, setOpacityConfirmed ] = useState(false);
+    const [ hoverConfirmed, setHoverConfirmed ] = useState(false);
 
     useEffect(()=>{
         if(pageYOffset > 160){
@@ -105,8 +105,11 @@ const Header = ()=>{
     function handleSearch(){
         console.log(resultSearch);
     }
-    function handlerOpenMenuDes(){
-        setOpacityAnimate([0, 0.2, 0.5, 0.8, 1]);
+    function handlerAnimateMenu(){
+        setOpacityConfirmed(!opacityConfirmed);
+    }
+    function handlerHover(){
+        setHoverConfirmed(!hoverConfirmed);
     }
 
     return(
@@ -118,15 +121,16 @@ const Header = ()=>{
                     <ButtonMenu onClick={handelToggle}>
                         <IconMenu src={menuOp ? cancelIcon : menuIcon} alt='Menu Icon'/>
                     </ButtonMenu>
-                    <ButtonMenu className='button-desk'
-                        onFocus={handlerOpenMenuDes}
-                        onClick={handlerOpenMenuDes}
+                    <ButtonMenu 
+                        className='button-desk'
+                        onClick={handlerAnimateMenu}
+                        onHoverStart={handlerHover}
+                        onHoverEnd={handlerHover}
                     >
                         <IconMenu 
                             src={menuIcon} 
                             alt='Menu Icon'
                         />
-                        <MenuD opacityAnimate={opacityAnimate}/>
                     </ButtonMenu>
                     <LogoIcon src={logoIcon} alt='Logo Icon'/>
                 </AreaIcon>
@@ -153,6 +157,10 @@ const Header = ()=>{
                     </ShoppingContent>
                 </ButtonsArea>
             </Container>
+            <MenuD 
+                hoverConfirmed={hoverConfirmed}
+                confirmed={opacityConfirmed}
+            />
             <SideMenu>
                 <Menu/>
             </SideMenu>

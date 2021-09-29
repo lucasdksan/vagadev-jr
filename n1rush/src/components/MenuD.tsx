@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Container,
         AreaButtons,
@@ -8,19 +8,46 @@ import { Container,
         TitleSection,
         Triangle } from '../styles/components/MenuD';
 
-interface MenuDProps {
-    opacityAnimate: number[];
+interface MenuProps{
+    confirmed: boolean;
+    hoverConfirmed: boolean;
 }
 
-const MenuD:React.FC <MenuDProps> = ({ opacityAnimate })=>{
-    const [ opacityA, setOpacityA ] = useState([0]);
+const MenuD:React.FC <MenuProps> = ({ confirmed, hoverConfirmed })=>{
+    const [ opacityAnimate, setOpacityAnimate ] = useState(0);
 
     useEffect(()=>{
-        setOpacityA(opacityAnimate);
-    },[opacityAnimate]);
+        if(confirmed && hoverConfirmed){
+            setOpacityAnimate(1);
+        } else if(confirmed && !hoverConfirmed){
+            setOpacityAnimate(1);
+        } else if(!confirmed && !hoverConfirmed){
+            setOpacityAnimate(0);
+        } else if(!confirmed && hoverConfirmed){
+            setOpacityAnimate(1);
+        } else {
+            setOpacityAnimate(0);
+        }
+    },[confirmed, hoverConfirmed]);
+
+    const container = {
+        hidden: { opacity: 0 },
+        visible: {
+          opacity: opacityAnimate,
+          transition: {
+            delayChildren: 0.8,
+            staggerChildren: 0.2,
+            when: 'beforeChildren'
+          }
+        }
+    };
 
     return(
         <Container
+            initial = 'hidden'
+            animate = 'visible'
+            variants = {container}
+            onHoverEnd = {()=>setOpacityAnimate(0)}
         >
             <Triangle/>
             <SectionsButtons>

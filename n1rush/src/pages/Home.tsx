@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Carousel from 'react-elastic-carousel';
 
 import { Container, 
         Banner,
@@ -15,10 +16,7 @@ import { Container,
         ShelfTitleIcon,
         TitleAreaShelf,
         TitleShelf,
-        ShelfElementArea,
-        ShelfButton,
-        LeftArrow,
-        RightArrow } from '../styles/pages/Home';
+        ShelfElementArea } from '../styles/pages/Home';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -37,6 +35,12 @@ import bannerData from '../data/BannerData';
 
 const Home = ()=>{
     const [ numberBar, setNumberBar ] = useState(1);
+    const breakPoints = [
+        { width: 1, itemsToShow: 1 },
+        { width: 550, itemsToShow: 1 },
+        { width: 768, itemsToShow: 1 },
+        { width: 1200, itemsToShow: 1 }
+    ]
 
     function handleNextBanner(){
         setNumberBar(1)
@@ -52,7 +56,7 @@ const Home = ()=>{
             return bannerData[value].imageM;
         }
     }
-    console.log(window.screen.width);
+
     return(
         <>
             <Header/>
@@ -100,14 +104,20 @@ const Home = ()=>{
                         <TitleShelf>Produtos em destaque</TitleShelf>
                     </TitleAreaShelf>
                     <ShelfElementArea>
-                        <ShelfButton><LeftArrow/></ShelfButton>
-                        <ShelfItem 
-                            key={shelfData[0].key}
-                            title={shelfData[0].text}
-                            value={shelfData[0].value}
-                            image={shelfData[0].image}
-                        />
-                        <ShelfButton><RightArrow/></ShelfButton>
+                        <Carousel className='carousel' isRTL={false} breakPoints={breakPoints}>
+                            {
+                                shelfData.map(itens => {
+                                    return (
+                                        <ShelfItem
+                                            key={itens.key}
+                                            image={itens.image}
+                                            title={itens.text}
+                                            value={itens.value}
+                                        />
+                                    );
+                                })
+                            }
+                        </Carousel>
                     </ShelfElementArea>
                     <AllShelf/>
                 </ShelfArea>

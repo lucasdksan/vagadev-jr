@@ -1,13 +1,6 @@
-import styled, { css } from 'styled-components';
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import styled from 'styled-components';
 
 import theme from '../colors/themes';
-
-const iconsStyles = css`
-    color: ${theme.colors.main_black};
-    width: 20px;
-    height: 30px;
-`;
 
 export const Container = styled.main`
     display: flex;
@@ -203,20 +196,15 @@ export const ShelfElementArea = styled.article`
     flex: 1;
     width: 100%;
     height: auto;
+    > .carousel{
+        width: 100%;
+        > button {
+            width: 30px;
+            height: 30px;
+            font-size: 20px;
+        }
+    }
     @media(min-width: 900px){
         display: none;
     }
 `;
-export const ShelfButton = styled.button`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 0 none;
-    background-color: transparent;
-    outline: 0;
-    width: 20px;
-    height: 30px;
-`;
-
-export const LeftArrow = styled(IoIosArrowBack)`${iconsStyles}`;
-export const RightArrow = styled(IoIosArrowForward)`${iconsStyles}`;
