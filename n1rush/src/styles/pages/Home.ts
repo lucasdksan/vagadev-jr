@@ -212,6 +212,9 @@ export const ShelfElementArea = styled.article`
             background-color: transparent;
             color: ${theme.colors.main_black};
         }
+        > div:first-child div.rec-slider-container{
+            margin: 0px 0px;
+        }
     }
     @media(min-width: 900px){
         display: none;
