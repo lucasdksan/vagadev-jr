@@ -198,10 +198,19 @@ export const ShelfElementArea = styled.article`
     height: auto;
     > .carousel{
         width: 100%;
-        > button {
-            width: 30px;
-            height: 30px;
-            font-size: 20px;
+        > div:first-child button.rec-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            font-size: 25px;
+            box-shadow: none;
+            border: 0 none;
+            outline: 0;
+            border-radius: none;
+            background-color: transparent;
+            color: ${theme.colors.main_black};
         }
     }
     @media(min-width: 900px){

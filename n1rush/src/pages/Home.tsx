@@ -104,7 +104,12 @@ const Home = ()=>{
                         <TitleShelf>Produtos em destaque</TitleShelf>
                     </TitleAreaShelf>
                     <ShelfElementArea>
-                        <Carousel className='carousel' isRTL={false} breakPoints={breakPoints}>
+                        <Carousel 
+                            className='carousel' 
+                            isRTL={false} 
+                            breakPoints={breakPoints}
+                            
+                        >
                             {
                                 shelfData.map(itens => {
                                     return (
