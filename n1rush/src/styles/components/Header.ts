@@ -21,7 +21,7 @@ export const Container = styled(motion.header)`
     justify-content: space-around;
     flex-direction: row;
     width: 100%;
-    height: 80px;
+    height: 60px;
     padding: 16px 13px 10px 18px;
     background-color: transparent;
     position: fixed;
@@ -33,6 +33,7 @@ export const Container = styled(motion.header)`
         justify-content: space-around;
     }
     @media(min-width: 1000px){
+        height: 80px;
         padding: 30px 13px 20px 18px;
     }
 `;
