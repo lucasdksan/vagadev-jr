@@ -1,4 +1,4 @@
-# :computer: Anotações do desenvolvimento do e-commerce R1_RUSH :computer: :
+# :computer: Anotações do desenvolvimento do e-commerce N1_RUSH :computer: :
 
 Para este teste, usarei React Js com Typescript, pois é a maneira que me sinto mais confortável para desenvolver qualquer projeto Web/Mobie.
 
